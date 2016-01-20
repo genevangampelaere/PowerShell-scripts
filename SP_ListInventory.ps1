@@ -1,0 +1,1 @@
+Get-SPWebApplication https://start.howest.be | Get-SPSite | Get-SPWeb |% { $_.Lists | select @{n=“Url”;e={$_.RootFolder.ServerRelativeUrl} }, Title, ItemCount } | sort ItemCount -Descending | Export-Csv d:\temp\listinventory.csv
